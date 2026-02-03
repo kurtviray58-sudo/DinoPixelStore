@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DinoPixel MEGA | 50+ Retro Items</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo" onclick="location.reload()">Dino<span>PIXEL</span></div>
+            
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="SEARCH DINOS..." onkeyup="resetAndFilter()">
+            </div>
+
+            <div class="nav-actions">
+                <span id="user-display"></span>
+                <button id="auth-btn" class="pixel-btn sm" onclick="openModal()">LOGIN</button>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒<span id="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>MEGA DINO SHOP</h1>
+            <p>COLLECT ALL 50 PIXEL MODELS</p>
+        </section>
+
+        <div id="product-grid" class="product-grid">
+            </div>
+
+        <div class="pagination">
+            <button id="load-more-btn" class="pixel-btn" onclick="loadMore()">LOAD MORE ITEMS</button>
+        </div>
+    </main>
+
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>CART</h2>
+            <button class="pixel-btn sm gray" onclick="toggleCart()">[X]</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <h3>TOTAL: $<span id="cart-total">0.00</span></h3>
+            <button class="pixel-btn block green" onclick="purchase()">PURCHASE</button>
+        </div>
+    </div>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="form-title">LOGIN</h2>
+            <input type="email" id="email" placeholder="EMAIL">
+            <input type="password" id="password" placeholder="PASS">
+            <button id="submit-btn" class="pixel-btn block" onclick="handleAuth()">ENTER</button>
+            <p id="toggle-text"><span onclick="toggleForm()">REGISTER</span></p>
+            <button class="pixel-btn sm gray" style="margin-top:15px" onclick="closeModal()">CLOSE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
